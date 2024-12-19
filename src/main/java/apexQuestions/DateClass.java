@@ -1,13 +1,9 @@
-package ApexQuestions;
-
-import Tekrarlar.LocalDatetime;
+package apexQuestions;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Period;
 import java.time.temporal.ChronoUnit;
-import java.util.Date;
 
 public class DateClass {
     public static void main(String[] args) {

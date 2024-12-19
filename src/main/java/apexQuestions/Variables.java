@@ -1,6 +1,4 @@
-package ApexQuestions;
-
-import java.sql.SQLOutput;
+package apexQuestions;
 
 public class Variables {
 

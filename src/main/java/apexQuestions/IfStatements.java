@@ -1,6 +1,4 @@
-package ApexQuestions;
-
-import java.util.Scanner;
+package apexQuestions;
 
 public class IfStatements {
 

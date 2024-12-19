@@ -1,4 +1,4 @@
-package ApexQuestions;
+package apexQuestions;
 
 import java.time.*;
 import java.time.temporal.ChronoUnit;
