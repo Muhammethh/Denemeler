@@ -1,5 +1,7 @@
 package apexQuestions;
 
+import java.util.jar.JarOutputStream;
+
 public class Loops {
 
     public static void main(String[] args) {
@@ -80,6 +82,268 @@ public class Loops {
         }
 
         System.out.println(Integer.valueOf(bş));
+
+
+        /*Asagıdak! görüntüyü b!r for döngüsü kullanarak elde eden kodu yazınız.
+        A A A A A
+        A A A A A
+        A A A A A*/
+
+
+        for (int i = 1; i <= 3; i++) {
+
+            for (int j = 1; j <= 5; j++) {
+                System.out.print("A ");
+            }
+            System.out.println();
+
+        }
+
+        System.out.println("*************************************");
+        /*Asagıdak! görüntüyü b!r for döngüsü kullanarak elde eden kodu yazınız.
+        A
+        A A
+        A A A
+        A A A A*/
+
+        for (int i = 1; i <= 4; i++) {
+
+            for (int j = 1; j <= i; j++) {
+
+                System.out.print("A ");
+
+            }
+            System.out.println();
+        }
+
+        System.out.println("-----------------------------------------");
+
+        /*Asagıdak! çarpım tablosunu olusturmak !ç!n kod yazınız.
+        3x1=3 3x2=6 3x3=9 3x4=12 3x5=15 3x6=18 3x7=21 3x8=24 3x9=27 3x10=30*/
+
+
+        for (int j = 1; j <= 10; j++) {
+
+            System.out.print(" 3X" + j + "= " + 3 * j);
+
+        }
+        System.out.println("****************************");
+
+        /*20'den 3'e kadar olan tek tamsayıları aynı satırda ardısık olacak sek!lde aralarında bosluk
+        bırakarak yazdırmak !ç!n gereken kodu yazınız.*/
+
+
+        for (int i = 20; i >= 3; i--) {
+
+            if (i % 2 != 0) {
+                System.out.print(i + " ");
+            }
+
+        }
+
+        /*Str!ng !ç!ndek! tüm küçük harfler! yıldız !saret!yle yazdırmak !ç!n gereken kodu yazınız.
+                Örneg!n; 'Al! Can?' ==> l*!*a*n**/
+
+        String s = "Ali Can?";
+        s = s.replaceAll("[^a-z]", "");
+        String t = "";
+        for (Integer i = 0; i < s.length(); i++) {
+            String r = s.substring(i, i + 1);
+            t = t + r + '*';
+        }
+        System.out.println(t);
+
+
+       /* Ver!len ondalık sayının sadece ondalık kısmındak! rakamlarını, kend!s!nden önce b!r yıldız
+        !saret!yle yazdırmak !ç!n gereken kodu yazınız.
+                Örneg!n; 75.4238 ´ *4*2*3*8
+*/
+
+
+        double sayı2 = 75.4238;
+
+        String sayıst = String.valueOf(sayı2);
+
+
+        String after = sayıst.split("\\.")[1];
+
+        for (int i = 0; i < after.length(); i++) {
+
+            System.out.print(after.charAt(i) + "*");
+
+        }
+
+
+        System.out.println("************************************");
+        //B!r Str!ng’ ! ters!ne çev!rmek !ç!n kod yazınız. Örnek; Mark ==> kraM
+
+        String s1 = "Mark";
+        String s2 = "";
+
+        for (int i = s1.length() - 1; i >= 0; i--) {
+
+            s2 = s2 + s1.charAt(i);
+
+        }
+
+        System.out.println(s2);
+
+        StringBuilder tt = new StringBuilder(s1);
+
+        tt.reverse();
+
+
+        // 3 !le 14 arasındak! tam sayıların toplamını bulmak !ç!n kodu yazınız.
+
+        int sum = 0;
+        for (int i = 3; i <= 14; i++) {
+
+            sum = sum + i;
+
+        }
+        System.out.println(sum);
+
+
+        // 3 !le 9 arasındak! tam sayıların çarpımını bulmak !ç!n kodu yazınız
+
+        int mult = 1;
+        int start = 3;
+        while (start <= 9) {
+
+            mult = mult * start;
+            start++;
+
+        }
+        System.out.println(mult);
+
+
+        /*Do-wh!le döngüsünü kullanarak konsolda 'C' !le 'A' arasındak! karakterler! yazdırmak !ç!n
+        kod yazınız.*/
+
+        char ch = 'A';
+
+        do {
+
+            System.out.println(ch);
+            ch++;
+
+        } while (ch <= 'C');
+
+
+        //B!r Str!ng de, !lk 'm' karakter!nden öncek! tüm karakterler! yazınız.
+
+        String s3 = "Christmas";
+        String s4 = "";
+
+        for (int i = 0; i < s3.length(); i++) {
+
+            if (s3.charAt(i) == 'm') {
+                break;
+            } else {
+                s4 = s4 + s3.charAt(i);
+            }
+
+        }
+        System.out.println(s4);
+
+
+        //B!r tamsayıdak! rakamların toplamını bulmak !ç!n kodu yazınız.
+
+        int num = 123;
+
+        int sum2 = 0;
+
+        System.out.println(num % 10);
+
+        for (int i = num; i > 0; i = i / 10) {
+
+            sum2 = (i % 10) + (sum2);
+
+        }
+        System.out.println("sum2 = " + sum2);
+
+
+        /*B!r Str!ng’ de benzers!z(tekrarsız) karakterler yazdırmak !ç!n kod yazınız.
+        Örneg!n; Hello ==> Heo*/
+
+        String str5 = "Hello";
+        String empty = "";
+
+        for (int i = 0; i < str5.length(); i++) {
+
+            String substr = str5.substring(i, i + 1);
+
+            if (str5.indexOf(substr) == str5.lastIndexOf(substr)) {
+
+                empty = empty + substr;
+
+            }
+
+        }
+        System.out.println("empty = " + empty);
+
+
+        /*B!r Str!ng’ dek! bosluk ve noktalama !saretler! dısındak! toplam karakter sayısını bulunuz.
+                String s = "Java is a strongly typed, object-oriented programming language.";
+*/
+
+        String b2 = "Java is a strongly typed, object-oriented programming language.";
+
+        b2 = b2.replaceAll(" ", "").replaceAll("[\\p{Punct}]", "");
+        System.out.println("b2.length() = " + b2.length());
+        int top = 0;
+
+        for (int i = 0; i < b2.length(); i++) {
+
+            String subs = b2.substring(i, i + 1);
+
+            top = top + subs.length();
+
+        }
+        System.out.println("top = " + top);
+
+
+       /* Asagıdak! görüntüyü b!r for döngüsü kullanarak elde eden kodu yazınız.
+            * * * * * *
+            * * * * *
+            * * * *
+            * * *
+            * *
+            *
+        */
+
+
+        for (int i = 5; i >=0 ; i--) {
+
+            for (int j = i; j >= 0; j--) {
+
+                System.out.print(" *");
+
+            }
+            System.out.println();
+        }
+
+
+        /*B!r tamsayının benzers!z(tekrarsız) basamaklarının toplamını bulmak !ç!n kodu yazınız.
+        Örnek:12133455 ´ 2+4=6*/
+
+        int p = 12133455;
+
+        String pstr = String.valueOf(p);
+
+        int bş1 = 0;
+
+        for (int i = 0; i < pstr.length(); i++) {
+
+            String subpstr = pstr.substring(i,i+1);
+
+            if (pstr.indexOf(subpstr) == pstr.lastIndexOf(subpstr)){
+
+                bş1 = bş1 + Integer.parseInt(subpstr);
+            }
+
+        }
+        System.out.println("bş1 = " + bş1);
 
 
     }
