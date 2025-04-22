@@ -1,5 +1,8 @@
 package apexQuestions;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
 import java.util.jar.JarOutputStream;
 
 public class Loops {
@@ -303,17 +306,17 @@ public class Loops {
         System.out.println("top = " + top);
 
 
-       /* Asagıdak! görüntüyü b!r for döngüsü kullanarak elde eden kodu yazınız.
-            * * * * * *
-            * * * * *
-            * * * *
-            * * *
-            * *
-            *
-        */
+        /* Asagıdak! görüntüyü b!r for döngüsü kullanarak elde eden kodu yazınız.
+         * * * * * *
+         * * * * *
+         * * * *
+         * * *
+         * *
+         *
+         */
 
 
-        for (int i = 5; i >=0 ; i--) {
+        for (int i = 5; i >= 0; i--) {
 
             for (int j = i; j >= 0; j--) {
 
@@ -335,15 +338,108 @@ public class Loops {
 
         for (int i = 0; i < pstr.length(); i++) {
 
-            String subpstr = pstr.substring(i,i+1);
+            String subpstr = pstr.substring(i, i + 1);
 
-            if (pstr.indexOf(subpstr) == pstr.lastIndexOf(subpstr)){
+            if (pstr.indexOf(subpstr) == pstr.lastIndexOf(subpstr)) {
 
                 bş1 = bş1 + Integer.parseInt(subpstr);
             }
 
         }
         System.out.println("bş1 = " + bş1);
+
+        //5 har!ç 3'ten 9'a kadar olan tam sayıları yazdırmak !ç!n kod yazınız.
+
+
+        for (int i = 3; i < 10; i++) {
+
+
+            if (i == 5) {
+                continue;
+            }
+            //System.out.print(i + "");
+
+
+        }
+
+
+        /*Asal sayı olup olmadıgını kontrol etmek !ç!n kullanıcıdan b!r tam sayı g!rmes!n! !stey!n!z.
+                Örnek: kullanıcı 43 g!rerse çıktı “43 b!r asal sayıdır”, kullanıcı 120 g!rerse “120 asal deg!ld!r”
+        olur, kullanıcı negat!f tam sayılar g!rerse çıktı “Poz!t!f b!r tam sayı g!r!n!z” sekl!nde kullanıcıyı
+        yönlend!r!n!z.*/
+
+        Scanner input = new Scanner(System.in);
+
+        //int number = input.nextInt();
+
+        /*while (rakam < 0) {
+
+            if (rakam < 0) {
+                System.out.println("Pozitif tam sayı giriniz");
+                rakam = input.nextInt();
+            }
+        }
+        if (rakam % 1 == 0 && rakam % rakam == 0){
+
+            System.out.println("Sayı asal sayıdır");
+
+        }else {
+            System.out.println("Sayı asal sayı değildir");
+        }*/
+
+
+       /* int count = 0;
+        if(number>0) {
+            if (number == 1) {
+                System.out.println(number + " bir asal sayidir");
+            }else {
+                for(int i=2; i<number; i++) {
+                    if(number%i==0) {
+                        count++;
+                    }
+                }
+                if(count==0) {
+                    System.out.println(number + " bir asal sayidir ");
+                }else {
+                    System.out.println(number + " bir asal sayi degildir ");
+                }
+            }
+        }else {
+            System.out.println("Pozitif bir tam sayi giriniz ");
+        }*/
+
+
+        /*Kullanıcıya kaç tane f!bonacc! sayısı görmek !sted!g!n! sorunuz. Ardından bu f!bonacc!
+                sayılarını yazdıran kodu yazınız.
+                Örnek: kullanıcı 6 g!rerse çıktı 1 1 2 3 5 8 olacaktır.*/
+
+        /*int rkm = input.nextInt();
+
+        ArrayList<Integer> arr = new ArrayList<>();
+        for (int i = 1; i < rkm; i++) {
+
+            arr.add(i);
+            arr.add(i + arr.get(i));
+
+        }
+        System.out.println(arr);*/
+
+        //-------------------------------------------
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Kac tane fibonacci sayisi gormek istiyorsunuz ?");
+        int number = scan.nextInt();
+        int fibo1 = 1;
+        int fibo2 = 1;
+        int fibonacci = 0;
+        System.out.print(fibo1 + " ");
+        System.out.print(fibo2 + " ");
+        for (int i = 1; i < number-1; i++) {
+            fibonacci = fibo1 + fibo2;
+            fibo1 = fibo2;
+            fibo2 = fibonacci;
+            System.out.print(fibonacci + " ");
+        }
 
 
     }
